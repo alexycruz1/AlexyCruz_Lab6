@@ -50,67 +50,7 @@ int main(int argc, char*argv[]){
 				usuarios.push_back(s);
 			}
 		 	
-		}else if (opcion == 2){//Modificar usuario
-			int opcion2;
-
-			cout << "1.- Agregar juego" << endl
-				 << "2.- Eliminar juego" << endl
-				 << "3.- Modificar password" << endl
-				 << "Ingrese una opcion: ";
-			cin >> opcion2;
-
-			if (opcion2 == 1){//modificar, agregar juego
-				int id, indice1, indice2;
-				bool agregar = false;
-				string username, password;
-
-				for (int i = 0; i < usuarios.size(); i++){
-					cout << juegos[i].toString();
-					cout << endl;
-				}
-				cout << endl;
-
-				cout << "Ingrese el id del juego a agregar: ";
-				cin >> id;
-
-				for (int i = 0; i < juegos.size(); i++){
-					if (juegos[i].getId() == id){
-						agregar = true;
-					}
-				}
-
-				cout << "Ingrese el username: ";
-				cin >> username;
-
-				cout << "Ingrese el password: ";
-				cin >> password;
-
-				for (int i = 0; i < usuarios.size(); i++){
-					if ((usuarios[i].getUsername() == username)){
-						agregar = true;
-						indice1 = i;
-					}
-				}
-
-				for (int i = 0; i < usuarios.size(); i++){
-					if ((usuarios[i].getPassword() == password)){
-						agregar = true;
-						indice2 = i;
-					}
-				}
-
-				if (indice1 == indice2){
-					agregar = true;
-				}else{
-					agregar = false;
-				}
-
-				if (agregar){
-					usuarios[indice1].addGame(id);
-				}
-				cout << endl;
-
-			}else if (opcion2 == 2){//Modificar, eliminar juego
+		}else if (opcion2 == 2){//Modificar, eliminar juego
 				cout << endl;
 				int id, indice1, indice2;
 				bool eliminar = false;
